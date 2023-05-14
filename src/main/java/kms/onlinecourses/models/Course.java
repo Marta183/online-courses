@@ -2,6 +2,7 @@ package kms.onlinecourses.models;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 public class Course implements Comparable<Course> {
     private long id;
@@ -62,5 +63,17 @@ public class Course implements Comparable<Course> {
     @Override
     public int compareTo(Course o) {
         return Long.compare(this.getId(), o.getId());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return Objects.equals(getId(), course.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

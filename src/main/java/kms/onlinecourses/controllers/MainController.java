@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/courses")
+//@RequestMapping("/courses")
 public class MainController {
 
     @Autowired
